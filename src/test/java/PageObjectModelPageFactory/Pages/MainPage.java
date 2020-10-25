@@ -1,11 +1,11 @@
-package Pages;
+package PageObjectModelPageFactory.Pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class MainPage extends PageBase{
+public class MainPage extends PageBase {
 
     @FindBy(xpath = "//H1")
     WebElement mainHeader;
@@ -47,5 +47,9 @@ public class MainPage extends PageBase{
                 && wait.until(ExpectedConditions.visibilityOf(scatterPlot)).isDisplayed()
                 && wait.until(ExpectedConditions.visibilityOf(correlationPlot)).isDisplayed()
                 && wait.until(ExpectedConditions.visibilityOf(monthlyMeasurementsPlot)).isDisplayed();
+    }
+
+    public void loginAsUser(String userId) {
+        driver.navigate().to(baseUrl + userId);
     }
 }
