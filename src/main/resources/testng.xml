@@ -2,11 +2,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="Test suite">
+
+    <!-- This parameter will be passed to every test in this suite -->
+    <parameter name="personalPage" value="https://juanfonsecasolis.github.io" />
+
     <test name="Test case">
-        <parameter name="emailid" value="tester456@gmail.com"/>
-        <parameter name="password" value="test@123"/>
+        <!-- This parameter will be passed this class only -->
+        <parameter name="userId" value="xxyn4pz8yhb0i7n"/>
+        <parameter name="searchTermEscEsh" value="optimal"/>
         <classes>
-            <class name="Tests.MainPageTest"/>
+            <class name="PageObjectModelPageFactory.Tests.MainPageTest"/>
         </classes>
     </test>
 </suite>

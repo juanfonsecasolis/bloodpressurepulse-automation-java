@@ -1,6 +1,6 @@
-package Tests;
+package PageObjectModelPageFactory.Tests;
 
-import Pages.MainPage;
+import PageObjectModelPageFactory.Pages.MainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -23,7 +23,7 @@ public abstract class TestBase {
         options.addArguments("--headless");
         driver = new FirefoxDriver(options);
         mainPage = new MainPage(driver);
-        driver.navigate().to(mainPage.url);
+        driver.navigate().to(mainPage.baseUrl);
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(mainPage.SECONDS_WAIT_PAGE_LOADS, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(mainPage.SECONDS_WAIT_ELEMENT_LOADS, TimeUnit.SECONDS);
@@ -35,4 +35,5 @@ public abstract class TestBase {
             driver.quit();
         }
     }
+
 }
