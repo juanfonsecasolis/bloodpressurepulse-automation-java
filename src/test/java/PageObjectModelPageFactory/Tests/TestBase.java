@@ -20,7 +20,7 @@ public abstract class TestBase {
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         driver = new FirefoxDriver(options);
         mainPage = new MainPage(driver);
         driver.navigate().to(mainPage.baseUrl);
