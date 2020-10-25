@@ -1,9 +1,13 @@
 package PageObjectModelPageFactory.Pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainPage extends PageBase {
 
@@ -31,6 +35,12 @@ public class MainPage extends PageBase {
     @FindBy(id = "bar_plot")
     WebElement monthlyMeasurementsPlot;
 
+    @FindBy(xpath = "//th[@data-dash-column=\"ESC/ESH*\"]/input")
+    WebElement escEshTableFilter;
+
+    @FindBy(xpath = "//td[@class=\"dash-cell column-5\"]")
+    List<WebElement> escEshTableCell;
+
     public MainPage(WebDriver driver){
         super(driver);
     }
@@ -51,5 +61,22 @@ public class MainPage extends PageBase {
 
     public void loginAsUser(String userId) {
         driver.navigate().to(baseUrl + userId);
+    }
+
+    public void filterByEscEsh(String searchTerm){
+        wait.until(ExpectedConditions.visibilityOf(escEshTableFilter))
+                .sendKeys(searchTerm+ Keys.ENTER);
+    }
+
+    public List<String> getAllEscEshColumnValues() {
+        List<WebElement> escEshTableCells;
+        List<String> labels = new ArrayList<String>();
+
+        escEshTableCells = wait.until(ExpectedConditions.visibilityOfAllElements(escEshTableCell));
+        for(WebElement element : escEshTableCells){
+            labels.add(element.getText());
+        }
+
+        return labels;
     }
 }

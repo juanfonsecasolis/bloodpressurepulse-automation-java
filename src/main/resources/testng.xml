@@ -9,6 +9,7 @@
     <test name="Test case">
         <!-- This parameter will be passed this class only -->
         <parameter name="userId" value="xxyn4pz8yhb0i7n"/>
+        <parameter name="searchTermEscEsh" value="optimal"/>
         <classes>
             <class name="PageObjectModelPageFactory.Tests.MainPageTest"/>
         </classes>
