@@ -7,19 +7,19 @@ import cucumber.api.java.en.When;
 public class Steps {
 
     @Given("^User logs into his profile page$")
-    public void open_the_Firefox_and_launch_the_application() throws Throwable
+    public void user_logs_into_his_profile_page() throws Throwable
     {
         System.out.println("YAHA...");
     }
 
     @When("^He chooses to see the details about the blood pressure categorization$")
-    public void enter_the_Username_and_Password() throws Throwable
+    public void he_chooses_to_see_the_details_about_the_blood_pressure_categorization() throws Throwable
     {
         System.out.println("YAHA...");
     }
 
     @Then("^He sees the AHA and ESC references$")
-    public void Reset_the_credential() throws Throwable
+    public void he_sees_the_AHA_and_ESC_references() throws Throwable
     {
         System.out.println("YAHA...");
     }

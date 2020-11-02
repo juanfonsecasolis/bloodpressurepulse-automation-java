@@ -3,6 +3,13 @@
 
 <suite name="Test suite">
 
+    <test name="Behavior driven development">
+        <!-- This parameter will be passed this class only -->
+        <classes>
+            <class name="BehaviorDrivenDevelopment.Runner"/>
+        </classes>
+    </test>
+
     <!-- This parameter will be passed to every test in this suite -->
     <parameter name="personalPage" value="https://juanfonsecasolis.github.io" />
     <test name="Page object model page factory">
@@ -14,10 +21,4 @@
         </classes>
     </test>
 
-    <test name="Behavior driven development">
-        <!-- This parameter will be passed this class only -->
-        <classes>
-            <class name="BehaviorDrivenDevelopment.Runner"/>
-        </classes>
-    </test>
 </suite>

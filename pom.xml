@@ -30,32 +30,35 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>RELEASE</version>
+            <version>4.0.0</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
             <artifactId>cucumber-jvm-deps</artifactId>
-            <version>RELEASE</version>
+            <version>1.0.5</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>RELEASE</version>
+            <version>1.2.6</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
-            <version>RELEASE</version>
+            <version>1.2.6</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>1.2.5</version>
         </dependency>
 
     </dependencies>
