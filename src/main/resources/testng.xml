@@ -17,7 +17,7 @@
         <parameter name="userId" value="xxyn4pz8yhb0i7n"/>
         <parameter name="searchTermEscEsh" value="optimal"/>
         <classes>
-            <!--class name="PageObjectModelPageFactory.Tests.MainPageTest"/-->
+            <class name="PageObjectModelPageFactory.Tests.MainPageTest"/>
         </classes>
     </test>
 

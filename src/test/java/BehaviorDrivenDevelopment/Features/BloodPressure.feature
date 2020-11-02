@@ -1,9 +1,9 @@
 Feature: Visualize my blood pressure levels
 
-  Scenario: User wants to know the categorization used on the detailed data table
+  Scenario: User wants to filter by keyword in the detailed data table
 
     Given User logs into his profile page
 
-    When He chooses to see the details about the blood pressure categorization
+    When He filters by an ESC-ESH category
 
-    Then He sees the AHA and ESC references
+    Then He sees only measurements with the specified category

@@ -21,8 +21,8 @@ public class MainPageTest extends TestBase {
     }
 
     @Test(priority=3)
-    @Parameters({ "userId", "searchTermEscEsh"})
-    void verifyFilterByKeyword(String userId, String searchTermEscEsh) {
+    @Parameters({ "searchTermEscEsh"})
+    void verifyFilterByKeyword(String searchTermEscEsh) {
         mainPage.filterByEscEsh(searchTermEscEsh);
         List<String> labelsEscEsh = mainPage.getAllEscEshColumnValues();
         System.out.println("Number of values found in the column: "+labelsEscEsh.size());
