@@ -15,10 +15,9 @@ public class Steps {
     protected WebDriver driver;
     protected MainPage mainPage;
 
-    @Given("^User logs into his profile page$")
-    public void user_logs_into_his_profile_page() throws Throwable
+    @Given("^User logs into his profile page as (.*)$")
+    public void user_logs_into_his_profile_page(String userId) throws Throwable
     {
-        String userId = "xxyn4pz8yhb0i7n"; // TODO: parameterize
         System.out.println("Opening the browser and starting the application...");
         WebDriverHelper helper = new WebDriverHelper();
         driver = helper.getDriver();
@@ -26,22 +25,22 @@ public class Steps {
         mainPage.loginAsUser(userId);
     }
 
-    @When("^He filters by an ESC-ESH category$")
-    public void he_filters_by_an_ESCESH_category() throws Throwable
+    @When("^He filters by an (.*) category$")
+    public void he_filters_by_an_escEsh_category(String escEshCategory) throws Throwable
     {
         System.out.println("Filtering by category...");
-        String searchTermEscEsh = "optimal";
-        mainPage.filterByEscEsh(searchTermEscEsh); // TODO: parameterize
+        mainPage.filterByEscEsh(escEshCategory);
     }
 
-    @Then("^He sees only measurements with the specified category$")
-    public void he_sees_only_measurements_with_the_specified_category() throws Throwable
+    @Then("^He sees only results with the specified (.*) category$")
+    public void he_sees_only_measurements_with_the_specified_category(String escEshCategory) throws Throwable
     {
         System.out.println("Verifying that all data corresponds to the chosen tag...");
-        String searchTermEscEsh = "optimal";  // TODO: parameterize
         List<String> labelsEscEsh = mainPage.getAllEscEshColumnValues();
         System.out.println("Number of values found in the column: "+labelsEscEsh.size());
-        Assert.assertTrue(labelsEscEsh.stream().allMatch(label -> label.equals(searchTermEscEsh)));
+        Assert.assertTrue(
+                0==labelsEscEsh.size()
+                || labelsEscEsh.stream().allMatch(label -> label.equals(escEshCategory)));
     }
 
 }

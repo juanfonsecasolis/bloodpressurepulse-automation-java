@@ -1,5 +1,10 @@
 # Automated tests for the BPP Visualizer
-Automated tests implemented in Selenium Web driver and Maven for the site https://bloodpressurepulse.herokuapp.com/xxyn4pz8yhb0i7n using Page Object Model, Page Factory, and Github Actions. 
+Automated tests implemented in Selenium Web driver and Maven for the site https://bloodpressurepulse.herokuapp.com/xxyn4pz8yhb0i7n
+
+## Patterns used:
+* Page Object Model, Page Factory
+* CI with Github Actions
+* Gherkin syntax (see the [feature file](https://raw.githubusercontent.com/juanfonsecasolis/seleniumWebdriverExample/master/src/test/java/BehaviorDrivenDevelopment/Features/BloodPressure.feature))
 
 Author: 2020 Juan M. Fonseca-Solis
 
